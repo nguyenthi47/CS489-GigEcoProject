@@ -66,7 +66,7 @@ class App extends Component {
 }
 
   getRandomPairs() {
-    var n = 10;
+    var n = 16;
     var pairs = [];
     for (let i = 0; i < n; i++) {
       pairs = [...pairs, getNRandomItems(data["combinations"], 2)];

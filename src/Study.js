@@ -17,7 +17,7 @@ class Study extends React.Component {
     nextScenario() {
         var checkList = ["choice" + this.state.idx, "j" + this.state.idx + "-2", "j" + this.state.idx + "-1"];
         if (this.props.checkIfSkip(checkList)) {
-            if (this.state.idx === 9) {
+            if (this.state.idx === 15) {
                 this.props.skipStage();
             } else {
                 this.setState({
@@ -95,7 +95,7 @@ class Study extends React.Component {
                 <hr style={{marginTop: "30px"}}/>
                 <div style={{textAlign: "right"}}>
                     <Button variant="secondary" onClick={this.nextScenario}>Next</Button>
-                    <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/10</div>
+                    <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/16</div>
                 </div>
             </div>
         return(
