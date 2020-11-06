@@ -19,7 +19,7 @@ class Consent extends React.Component {
                         The purpose of this research is to understand people's opinion about the future of work, particularly the gig economy. This experiment is composed of an online survey that takes less than 20 minutes to complete. Your responses will be used for research purposes only. Your responses may be shared with other researchers; all information, however, will be anonymized and allow no inference on any particular individual. 
                         Results will be published only as aggregate statistics, allowing no inference on any particular individual. Your participation is voluntary and you may withdraw from the study at any time without any penalty. To withdraw, simply close your browser.
                         <div>
-                        This study is being conducted as a class project for Computer Ethics and Social Issues (CS489) course at KAIST.
+                        This study is being conducted as a class project for the Computer Ethics and Social Issues (CS489) course at KAIST.
                         </div>
                         <div className="RedSpotlight Subtitle"> Participants who complete the survey will receive financial compensation as an incentive. <br/> 
                         <span style={(this.props.Preview)? {"display": "none"} : {}}>If you answer the questions in this survey too quickly (e.g., less than a second per question) without reading, 

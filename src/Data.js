@@ -19,3 +19,13 @@ export const demographics = [
         {id: "gig", text: "Add more questions?", options: ["Add options", "Prefer not to respond"]},
     ]},
 ];
+
+export const config = {
+    apiKey: "AIzaSyBRZMYFURGX03kA3YpiTBmwc1Fi5pdvFpM",
+    authDomain: "gigeco-project.firebaseapp.com",
+    databaseURL: "https://gigeco-project.firebaseio.com",
+    projectId: "gigeco-project",
+    storageBucket: "gigeco-project.appspot.com",
+    messagingSenderId: "975703800780",
+    appId: "1:975703800780:web:4a55530d3e349fcfa07b69"
+  };

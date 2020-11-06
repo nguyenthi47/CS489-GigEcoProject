@@ -3,8 +3,10 @@ import './App.css';
 import Consent from './Consent.js';
 import data from './totalCombinations.json';
 import Study from './Study.js';
-import { getNRandomItems, demographicsIds } from './Data.js';
+import { getNRandomItems, demographicsIds, config } from './Data.js';
 import Demographics from './Demographics.js';
+import firebase from 'firebase';
+import Button from 'react-bootstrap/Button';
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +28,12 @@ class App extends Component {
     this.saveResponse = this.saveResponse.bind(this);
     this.checkIfSkip = this.checkIfSkip.bind(this);
     this.checkDemographics = this.checkDemographics.bind(this);
+    this.saveToFirebase = this.saveToFirebase.bind(this);
+    this.redirectToSurveyCompletion = this.redirectToSurveyCompletion.bind(this);
+
+    if (!firebase.apps.length) {
+      firebase.initializeApp(config);
+  }
   }
 
   checkDemographics() {
@@ -37,6 +45,25 @@ class App extends Component {
     }
     return count === demographicsIds.length;
   }
+
+  saveToFirebase() {
+    const min = 1;
+    const max = 10000;
+    const rand = Math.round(min + Math.random() * (max - min));
+
+    var allResponses = this.state.responses;
+    const times = this.state.time;
+    for (var keyTime in times) {
+        allResponses[keyTime] = times[keyTime];
+    }
+
+    firebase.database().ref("/" + rand).set(allResponses).catch(error => console.log(error)).then(() => this.redirectToSurveyCompletion());
+  }
+
+  redirectToSurveyCompletion() {
+    let path = 'https://google.com';
+    window.open(path, "_self");
+}
 
   getRandomPairs() {
     var n = 10;
@@ -92,7 +119,7 @@ class App extends Component {
       <div className="QuestionMargin">
           <span className="Title Spotlight RedSpotlight">Click on the button below to complete the survey.</span>
           <div className="QuestionMargin">
-              {/* <Button variant="secondary" onClick={this.saveToFirebase}>Complete Survey</Button>} */}
+              <Button variant="secondary" onClick={this.saveToFirebase}>Complete Survey</Button>
           </div>
       </div>
     </div>; 
