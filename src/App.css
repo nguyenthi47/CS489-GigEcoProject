@@ -23,6 +23,7 @@
 
 .tableInfo {
   min-width: 15%;
+  padding-left: 7px;
 }
 
 .scalePoint {
@@ -133,6 +134,15 @@ table, td {
   font-weight: bold;
   padding: 6px;
   /* background-color: rgb(231, 230, 230); */
+  border-right: 2px solid black;
+}
+
+.tableHeader {
+  width: 20%;
+  font-weight: bold;
+  padding: 6px;
+  border-bottom: 2px solid black; 
+  text-align: center;
 }
 
 .tableRightCol {

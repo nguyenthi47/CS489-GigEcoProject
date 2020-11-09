@@ -20,6 +20,7 @@ class Study extends React.Component {
             if (this.state.idx === 15) {
                 this.props.skipStage();
             } else {
+                this.props.saveTime("scenario" +  this.state.idx + "end")
                 this.setState({
                     idx: this.state.idx + 1
                 })

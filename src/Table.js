@@ -19,9 +19,9 @@ class Table extends React.Component{
                 <table className="tableCol center">
                     <thead>
                         <tr>
-                            <td/>
-                            <td className="tableLeftCol">Job Listing 1</td>
-                            <td className="tableLeftCol">Job Listing 2</td>
+                            <td className="tableHeader tableLeftCol"/>
+                            <td className="tableHeader">Job Listing 1</td>
+                            <td className="tableHeader">Job Listing 2</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,7 +33,7 @@ class Table extends React.Component{
                                 <td className="tableInfo">
                                     {this.props.pair[0][row.idx]}
                                 </td>
-                                <td>
+                                <td  className="tableInfo">
                                     {this.props.pair[1][row.idx]}
                                 </td>
                             </tr>

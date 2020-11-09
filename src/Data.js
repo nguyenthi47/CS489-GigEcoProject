@@ -4,7 +4,7 @@ export function getNRandomItems(items, n) {
 }
 
 export const demographicsIds = 
-    ["gender", "age", "income", "politics", "education", "gig"];
+    ["gender", "age", "income", "politics", "education", "gigEver", "gigBenefit", "gigWorkers"];
 
 export const demographics = [
     {id: "personalData", questions: [
@@ -16,7 +16,9 @@ export const demographics = [
         {id: "race", text: "How would you describe yourself in terms of race?", options: ["African American", "Asian", "Caucasian", "Hispanic", "Other", "Prefer not to respond"]}
     ]},
     {id: "experience", questions: [
-        {id: "gig", text: "Add more questions?", options: ["Add options", "Prefer not to respond"]},
+        {id: "gigEver", text: "Have you ever participated in the gig economy as a worker? (e.g., Uber, Mechanical Turk)", options: ["Yes", "No", "I am not sure", "Prefer not to respond"]},
+        {id: "gigBenefit", text: "Do you think the gig economy (e.g., Uber, Mechanical Turk) is overall beneficial to society?", options: ["Yes", "No", "I am not sure", "Prefer not to respond"]},
+        {id: "gigWorkers", text: "Do you think gig workers (e.g., for Uber, Mechanical Turk) should generally be employees or contractors?", options: ["Employees", "Contractors", "I am not sure", "Prefer not to respond"]},
     ]},
 ];
 

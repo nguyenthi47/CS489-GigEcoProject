@@ -105,7 +105,7 @@ class App extends Component {
     if (stage === "consent") {
       content = <Consent skipStage={this.skipStage}/>
     } else if (stage === "study") {
-      content = <Study skipStage={this.skipStage} pairs={this.state.pairs} saveResponse={this.saveResponse} checkIfSkip={this.checkIfSkip}/>
+      content = <Study skipStage={this.skipStage} pairs={this.state.pairs} saveResponse={this.saveResponse} checkIfSkip={this.checkIfSkip} saveTime={this.saveTime}/>
     } else if (stage === "demographics") {
       content = <Demographics skipStage={this.skipStage} checkDemographics={this.checkDemographics} saveResponse={this.saveResponse}/>
     } else if (stage === "end") {
