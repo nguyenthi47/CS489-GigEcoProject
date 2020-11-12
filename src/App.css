@@ -5,6 +5,10 @@
   line-height: 1.6;
 }
 
+hr{
+border-color: #add8e6;
+}
+
 .Title {
   font-size: 32px;
   font-weight: bold;
