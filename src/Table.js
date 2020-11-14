@@ -1,53 +1,60 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import './App.css';
 
-class Table extends React.Component{
-    render() {
-        let content;
-        const cols = [
-            {idx: "Working hours (time period)", label: "Working Hours"},
-            {idx: "Working hours (length)", label: "Work Length"},
-            {idx: "Salary", label: "Salary"},
-            {idx: "Day off", label: "Holiday"},
-            {idx: "Evaluation", label: "Evaluation Frequency"},
-            {idx: "Direct Supervisor", label: "Direct Supervisor"},
-            {idx: "Working Options (companies in same sector)", label: "Allowed to Work for Competitor"}
+const useStyles = makeStyles({
+  table: {
+    minWidth: 300,
+  },
+});
 
-        ];
-        content = 
-            <div style={{marginTop: "20px", marginBottom: "20px"}}>
-                <table className="tableCol center">
-                    <thead>
-                        <tr>
-                            <td className="tableHeader tableLeftCol"/>
-                            <td className="tableHeader">Job Listing 1</td>
-                            <td className="tableHeader">Job Listing 2</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {(cols.map((row, rowIdx) => (
-                            <tr key={rowIdx}>
-                                <td className="tableLeftCol">
-                                    {row.label}
-                                </td>
-                                <td className="tableInfo">
-                                    {this.props.pair[0][row.idx]}
-                                </td>
-                                <td  className="tableInfo">
-                                    {this.props.pair[1][row.idx]}
-                                </td>
-                            </tr>
-                        )))
-                    } 
-                    </tbody>
-                </table>
-            </div>;
-        return(
-            <div>
-                {content}
-            </div>
-        )
-    }
+function createAttr(key, attribute) {
+  return { key, attribute }
 }
 
-export default Table;
+const rows = [
+  createAttr('Working hours (time period)', 'Working Hours'),
+  createAttr('Working hours (length)', 'Work Length'),
+  createAttr('Salary', 'Salary'),
+  createAttr('Day off', 'Holiday'),
+  createAttr('Evaluation', 'Evaluation Frequency'),
+  createAttr('Direct Supervisor', 'Direct Supervisor'),
+  createAttr('Working Options (companies in same sector)', 'Allowed to Work for Competitor')
+];
+
+
+export default function BasicTable(props) {
+  const classes = useStyles();
+
+  return (
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Attributes</TableCell>
+            <TableCell align="center">Job Listing 1</TableCell>
+            <TableCell align="center">Job Listing 2</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.key}>
+              <TableCell component="th" scope="row">
+                {row.attribute}
+              </TableCell>
+              <TableCell align="left">{props.pair[0][row.key]}</TableCell>
+              <TableCell align="left">{props.pair[1][row.key]}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
