@@ -9,6 +9,10 @@ hr{
 border-color: #ffffff;
 }
 
+.MuiTableCell-head{
+border-right: 1px solid rgba(176, 176, 176, 1);
+}
+
 .Title {
   font-size: 32px;
   font-weight: bold;
