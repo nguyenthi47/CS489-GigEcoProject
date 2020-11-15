@@ -13,6 +13,17 @@ border-color: #ffffff;
 border-right: 1px solid rgba(176, 176, 176, 1);
 }
 
+ProgressCase{
+width: 100%;
+background-color: grey;
+}
+
+ProgressBar{
+width: 0%;
+height: 30px;
+background-color: green;
+}
+
 .Title {
   font-size: 32px;
   font-weight: bold;

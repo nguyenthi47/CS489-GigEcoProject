@@ -31,6 +31,13 @@ class Study extends React.Component {
 
     }
 
+    updateProgress() {
+        var count = 0;
+        var bar = document.getElementById('ProgressBar');
+        count = count + 100 / 16;
+        bar.style.width = count + '%';
+    }
+
     render() {
         let content;
         content = 
@@ -95,9 +102,12 @@ class Study extends React.Component {
                 </div>
                 <hr style={{marginTop: "30px"}}/>
                 <div style={{textAlign: "right"}}>
-                    <Button variant="secondary" onClick={this.nextScenario}>Next</Button>
+                <Button variant="secondary" onClick={ this.nextScenario}>Next</Button>
                     <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/16</div>
-                </div>
+            </div>
+        <div id="ProgressCase">
+            <div id="ProgressBar"></div>
+        </div>
             </div>
         return(
             <div>
