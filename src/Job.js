@@ -48,12 +48,15 @@ export default function JobCard(props) {
             </Typography>
           ))}
         </ul>
+        <br/>
         <Divider />
+        <br/>
             <Typography component="p" variant="body1" align="left">
-                To what extent would you be willing to accept this job listing?
+                Please rate the job above:
             </Typography>
         <div>
           <RateJob 
+            jobIdx = {props.jobIdx}
             saveResponse = {props.saveResponse}
             question = {props.question}
           />

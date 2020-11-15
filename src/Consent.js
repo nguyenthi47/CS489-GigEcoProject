@@ -21,9 +21,6 @@ class Consent extends React.Component {
                         <div>
                         This study is being conducted as a class project for the Computer Ethics and Social Issues (CS489) course at KAIST.
                         </div>
-                        <div className="RedSpotlight Subtitle"> Participants who complete the survey will receive financial compensation as an incentive. <br/> 
-                        <span style={(this.props.Preview)? {"display": "none"} : {}}>If you answer the questions in this survey too quickly (e.g., less than a second per question) without reading, 
-                        your response will be discarded. Please read the survey carefully.</span></div>
                         <br/>
                         Please contact the research administrator (gcamilo7@gmail.com) if you have any questions. Thank you!
                         <br/>

@@ -40,7 +40,7 @@ class RateJob extends React.Component {
   return (
     <div className={classes.root}>
       <Rating
-        name="hover-feedback"
+        name={"hover-feedback" + this.props.jobIdx}
         value={this.state.value}
         precision={1}
         onChange={this.handleChange}
@@ -48,7 +48,7 @@ class RateJob extends React.Component {
           this.setState({hover: newHover});
         }}
       />
-      {this.state.value !== null && <Box>{labels[this.state.hover !== -1 ? this.state.hover : this.state.value]}</Box>}
+      {/* {this.state.value !== null && <Box>{labels[this.state.hover !== -1 ? this.state.hover : this.state.value]}</Box>} */}
     </div>
   );
   }

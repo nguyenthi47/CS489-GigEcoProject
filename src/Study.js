@@ -107,7 +107,8 @@ class Study extends React.Component {
             {this.props.pairs[this.state.idx].map((jobSpecs, jobIdx) => (
               <Grid item key={jobIdx} sm={12} md={6}>
                 <JobCard 
-                  title = {"Job listing " + (jobIdx + 1)}
+                  jobIdx = {jobIdx}
+                  title = {"Job Listing " + (jobIdx + 1)}
                   saveResponse = {this.props.saveResponse}
                   question = {"j" + this.state.idx + "-1"}
                   jobSpecs = {jobSpecs}
@@ -116,6 +117,11 @@ class Study extends React.Component {
             ))}
           </Grid>
         </Container>
+        <hr style={{marginTop: "30px"}}/>
+          <div style={{textAlign: "right"}}>
+              <Button variant="secondary" onClick={this.nextScenario}>Next</Button>
+              <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/16</div>
+          </div>
       </React.Fragment>
     );
   }
