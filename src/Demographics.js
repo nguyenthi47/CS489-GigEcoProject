@@ -45,7 +45,7 @@ class Demographics extends Component {
                                         question={question.id}
                                         multipleText={true}
                                         answers={question.options}
-                                        vertical={group.id === "experience" && question.id !== "court"}
+                                        //vertical={group.id === "experience" && question.id !== "court"}
                                         demographics={true}/>
                                 </div>
                             ))
