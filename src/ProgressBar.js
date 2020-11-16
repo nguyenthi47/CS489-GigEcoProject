@@ -1,7 +1,7 @@
 import React from 'react';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-const normalise = value => (value) * 100 / 16;
+const normalise = value => (value) * 100 / 10;
 
 // Example component that utilizes the `normalise` function at the point of render.
 function ProgressBar(props) {
