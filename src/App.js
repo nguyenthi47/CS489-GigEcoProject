@@ -14,7 +14,7 @@ class App extends Component {
 
     this.state = {
       data: data["combinations"],
-      currId: 3,
+      currId: 0,
       stages: ["consent", "study", "demographics", "end"],
       time: {
         "init": new Date()
