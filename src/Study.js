@@ -37,6 +37,10 @@ const styles = theme => ({
   instruction: {
     padding: theme.spacing(8, 0, 6),
   },
+  choice: {
+    padding: theme.spacing(3, 0, 6),
+    textAlign: "center"
+  },
   cardHeader: {
     backgroundColor:
     theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
@@ -64,16 +68,22 @@ class Study extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      idx: 0
+      idx: 0,
+      choice: null
     }
 
     this.nextScenario = this.nextScenario.bind(this);
   }
 
+  saveResponse(q, v) {
+    this.props.saveResponse(q, v);
+    this.setState({choice: v});
+  }
+
   nextScenario() {
     var checkList = ["choice" + this.state.idx, "j" + this.state.idx + "-2", "j" + this.state.idx + "-1"];
     if (this.props.checkIfSkip(checkList)) {
-      if (this.state.idx === 15) {
+      if (this.state.idx === 9) {
         this.props.skipStage();
       } else {
         this.props.saveTime("scenario" +  this.state.idx + "end")
@@ -97,7 +107,7 @@ class Study extends React.Component {
             Instruction
           </Typography>
           <Typography variant="body1"  color="textSecondary" component="p">
-            Please read the following job listings for professional drivers below.
+            Please read the following job listings for professional drivers below. <br/>
             We would like to know your opinion about both of them and which one you would prefer to take if you were given the chance to choose.
           </Typography>
         </Container>
@@ -108,20 +118,39 @@ class Study extends React.Component {
               <Grid item key={jobIdx} sm={12} md={6}>
                 <JobCard 
                   jobIdx = {jobIdx}
+                  qIdx = {this.state.idx}
                   title = {"Job Listing " + (jobIdx + 1)}
                   saveResponse = {this.props.saveResponse}
-                  question = {"j" + this.state.idx + "-1"}
+                  question = {"j" + this.state.idx + "-" + (jobIdx + 1)}
                   jobSpecs = {jobSpecs}
+                  checkJobEval = {this.props.checkJobEval}
                 />
               </Grid>
             ))}
           </Grid>
         </Container>
+
+        <Container maxWidth="sm" component="main" className={classes.choice}>
+          <Typography component="h1" variant="h6" color="textPrimary" gutterBottom>
+            Which one of the two job listings above do you prefer? 
+          </Typography>
+          <Typography variant="body1"  color="textSecondary" component="p">
+            <Button variant="contained"
+            color={(this.props.checkChoice("choice" + this.state.idx) === 1)? "primary": "default"}
+            onClick={() => this.saveResponse("choice" + this.state.idx, 1)}>Job Listing 1</Button>
+            <span style={{padding: "25px"}}></span>
+            <Button variant="contained" 
+            color={(this.props.checkChoice("choice" + this.state.idx) === 2)? "primary": "default"}
+            onClick={() => this.saveResponse("choice" + this.state.idx, 2)}
+            >Job Listing 2</Button>
+          </Typography>
+        </Container>
+
         <hr style={{marginTop: "30px"}}/>
-          <div style={{textAlign: "right"}}>
-              <Button variant="secondary" onClick={this.nextScenario}>Next</Button>
-              <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/16</div>
-          </div>
+        <div style={{textAlign: "right"}}>
+            <Button variant="contained" onClick={this.nextScenario}>Next</Button>
+            <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/10</div>
+        </div>
       </React.Fragment>
     );
   }

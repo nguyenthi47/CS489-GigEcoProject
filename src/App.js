@@ -14,7 +14,7 @@ class App extends Component {
 
     this.state = {
       data: data["combinations"],
-      currId: 0,
+      currId: 3,
       stages: ["consent", "study", "demographics", "end"],
       time: {
         "init": new Date()
@@ -30,10 +30,20 @@ class App extends Component {
     this.checkDemographics = this.checkDemographics.bind(this);
     this.saveToFirebase = this.saveToFirebase.bind(this);
     this.redirectToSurveyCompletion = this.redirectToSurveyCompletion.bind(this);
+    this.checkChoice = this.checkChoice.bind(this);
+    this.checkJobEval = this.checkJobEval.bind(this);
 
     if (!firebase.apps.length) {
       firebase.initializeApp(config);
   }
+  }
+
+  checkChoice(choice) {
+    return this.state.responses[choice];
+  }
+
+  checkJobEval(job) {
+    return this.state.responses[job];
   }
 
   checkDemographics() {
@@ -57,6 +67,8 @@ class App extends Component {
         allResponses[keyTime] = times[keyTime];
     }
 
+    allResponses.pairs = this.state.pairs;
+
     firebase.database().ref("/" + rand).set(allResponses).catch(error => console.log(error)).then(() => this.redirectToSurveyCompletion());
   }
 
@@ -66,7 +78,7 @@ class App extends Component {
 }
 
   getRandomPairs() {
-    var n = 16;
+    var n = 10;
     var pairs = [];
     for (let i = 0; i < n; i++) {
       pairs = [...pairs, getNRandomItems(data["combinations"], 2)];
@@ -105,7 +117,8 @@ class App extends Component {
     if (stage === "consent") {
       content = <Consent skipStage={this.skipStage}/>
     } else if (stage === "study") {
-      content = <Study skipStage={this.skipStage} pairs={this.state.pairs} saveResponse={this.saveResponse} checkIfSkip={this.checkIfSkip} saveTime={this.saveTime}/>
+      content = <Study skipStage={this.skipStage} pairs={this.state.pairs} saveResponse={this.saveResponse} checkIfSkip={this.checkIfSkip} saveTime={this.saveTime}
+      checkChoice={this.checkChoice} checkJobEval={this.checkJobEval}/>
     } else if (stage === "demographics") {
       content = <Demographics skipStage={this.skipStage} checkDemographics={this.checkDemographics} saveResponse={this.saveResponse}/>
     } else if (stage === "end") {

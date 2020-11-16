@@ -57,8 +57,10 @@ export default function JobCard(props) {
         <div>
           <RateJob 
             jobIdx = {props.jobIdx}
+            qIdx = {props.qIdx}
             saveResponse = {props.saveResponse}
             question = {props.question}
+            checkJobEval = {props.checkJobEval}
           />
         </div>
       </CardContent>

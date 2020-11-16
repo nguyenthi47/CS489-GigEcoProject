@@ -32,7 +32,7 @@ class RateJob extends React.Component {
 
   handleChange(e, newValue) {
     this.setState({value: newValue});
-    this.props.saveResponse(this.props.question, labels[newValue]);
+    this.props.saveResponse(this.props.question, newValue);
   }
 
   render() {
@@ -40,8 +40,9 @@ class RateJob extends React.Component {
   return (
     <div className={classes.root}>
       <Rating
-        name={"hover-feedback" + this.props.jobIdx}
-        value={this.state.value}
+        size="large"
+        name={"rating-pair-" + this.props.qIdx + "-jobIdx-" + this.props.jobIdx}
+        value={(typeof(this.props.checkJobEval(this.props.question)) === "undefined")? null : this.props.checkJobEval(this.props.question)}
         precision={1}
         onChange={this.handleChange}
         onChangeActive={(event, newHover) => {
