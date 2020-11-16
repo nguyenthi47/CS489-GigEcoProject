@@ -13,6 +13,7 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import LikertScale from './LikertScale';
 import JobCard from './Job';
+import ProgressBar from './ProgressBar';
 
 const styles = theme => ({
   '@global': {
@@ -145,11 +146,11 @@ class Study extends React.Component {
             >Job Listing 2</Button>
           </Typography>
         </Container>
-
-        <hr style={{marginTop: "30px"}}/>
+        <div> <ProgressBar value= {this.state.idx + 1}/> </div>
         <div style={{textAlign: "right"}}>
-            <Button variant="contained" onClick={this.nextScenario}>Next</Button>
-            <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/10</div>
+          <div style={{display: (this.state.attCheck) ? "none" : "block", textAlign: "left"}}>{this.state.idx + 1}/10</div>
+          <hr style={{marginTop: "10px"}}/>
+          <Button variant="contained" onClick={this.nextScenario}>Next</Button>
         </div>
       </React.Fragment>
     );
