@@ -97,6 +97,7 @@ class Study extends React.Component {
     }
 
   }
+  
   render() {
     const { classes } = this.props;
     return (
@@ -114,9 +115,9 @@ class Study extends React.Component {
         </Container>
         {/* End hero unit */}
         <Container maxWidth="md" component="main">
-          <Grid container spacing={5} alignItems="flex-end">
+          <Grid container spacing={5} alignItems = "flex">
             {this.props.pairs[this.state.idx].map((jobSpecs, jobIdx) => (
-              <Grid item key={jobIdx} sm={12} md={6}>
+              <Grid item key={jobIdx} sm={12} md={6} style={{display: 'flex'}}>
                 <JobCard 
                   jobIdx = {jobIdx}
                   qIdx = {this.state.idx}
