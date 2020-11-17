@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/CS489-GigEcoProject/static/css/main.1441a469.chunk.css",
+    "main.js": "/CS489-GigEcoProject/static/js/main.5f6ecd6c.chunk.js",
+    "main.js.map": "/CS489-GigEcoProject/static/js/main.5f6ecd6c.chunk.js.map",
+    "runtime-main.js": "/CS489-GigEcoProject/static/js/runtime-main.3a34710d.js",
+    "runtime-main.js.map": "/CS489-GigEcoProject/static/js/runtime-main.3a34710d.js.map",
+    "static/js/2.2685eed2.chunk.js": "/CS489-GigEcoProject/static/js/2.2685eed2.chunk.js",
+    "static/js/2.2685eed2.chunk.js.map": "/CS489-GigEcoProject/static/js/2.2685eed2.chunk.js.map",
+    "static/js/3.fb4fb437.chunk.js": "/CS489-GigEcoProject/static/js/3.fb4fb437.chunk.js",
+    "static/js/3.fb4fb437.chunk.js.map": "/CS489-GigEcoProject/static/js/3.fb4fb437.chunk.js.map",
+    "index.html": "/CS489-GigEcoProject/index.html",
+    "static/css/main.1441a469.chunk.css.map": "/CS489-GigEcoProject/static/css/main.1441a469.chunk.css.map",
+    "static/js/2.2685eed2.chunk.js.LICENSE.txt": "/CS489-GigEcoProject/static/js/2.2685eed2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a34710d.js",
+    "static/js/2.2685eed2.chunk.js",
+    "static/css/main.1441a469.chunk.css",
+    "static/js/main.5f6ecd6c.chunk.js"
+  ]
+}
