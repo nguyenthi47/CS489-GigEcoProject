@@ -43,8 +43,9 @@ export default function JobCard(props) {
       <CardContent>
         <ul>
           {rows.map((row, rowIdx) => (
-            <Typography component="li" variant="subtitle1" align="center" key={rowIdx}>
-              {row.label + ": " + props.jobSpecs[row.idx]}
+            <Typography component="li" variant="subtitle1" align="left" key={rowIdx}>
+              <b>{row.label}</b>: {props.jobSpecs[row.idx]}
+              {/* {row.label + ": " + props.jobSpecs[row.idx]} */}
             </Typography>
           ))}
         </ul>

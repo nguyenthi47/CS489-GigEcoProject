@@ -8,7 +8,7 @@ class Consent extends React.Component {
             <div>
                 <div className="Title">Record of Consent</div>
                     <div className="Text">
-                        In this survey, we will present you with some job opportunities and we would like to know which ones you would prefer if you were looking for a job.
+                        In this survey, we will present you with some job advertisements and we would like to know which ones you would prefer if you were looking for a job.
                         <p style={{"fontWeight": "bold"}}>We are not looking for the correct answers, but your opinion on the matter.</p>
                         <p className="Question Spotlight">Please, read all the information provided in this survey carefully.</p>
                         <div>
