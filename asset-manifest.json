@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/gigeco-survey/static/css/main.1441a469.chunk.css",
-    "main.js": "/gigeco-survey/static/js/main.7e872d39.chunk.js",
-    "main.js.map": "/gigeco-survey/static/js/main.7e872d39.chunk.js.map",
-    "runtime-main.js": "/gigeco-survey/static/js/runtime-main.b976028c.js",
-    "runtime-main.js.map": "/gigeco-survey/static/js/runtime-main.b976028c.js.map",
-    "static/js/2.b4cce44d.chunk.js": "/gigeco-survey/static/js/2.b4cce44d.chunk.js",
-    "static/js/2.b4cce44d.chunk.js.map": "/gigeco-survey/static/js/2.b4cce44d.chunk.js.map",
-    "static/js/3.fb4fb437.chunk.js": "/gigeco-survey/static/js/3.fb4fb437.chunk.js",
-    "static/js/3.fb4fb437.chunk.js.map": "/gigeco-survey/static/js/3.fb4fb437.chunk.js.map",
-    "index.html": "/gigeco-survey/index.html",
-    "static/css/main.1441a469.chunk.css.map": "/gigeco-survey/static/css/main.1441a469.chunk.css.map",
-    "static/js/2.b4cce44d.chunk.js.LICENSE.txt": "/gigeco-survey/static/js/2.b4cce44d.chunk.js.LICENSE.txt"
+    "main.css": "/CS489-GigEcoProject/static/css/main.1441a469.chunk.css",
+    "main.js": "/CS489-GigEcoProject/static/js/main.7e872d39.chunk.js",
+    "main.js.map": "/CS489-GigEcoProject/static/js/main.7e872d39.chunk.js.map",
+    "runtime-main.js": "/CS489-GigEcoProject/static/js/runtime-main.3a34710d.js",
+    "runtime-main.js.map": "/CS489-GigEcoProject/static/js/runtime-main.3a34710d.js.map",
+    "static/js/2.148b133f.chunk.js": "/CS489-GigEcoProject/static/js/2.148b133f.chunk.js",
+    "static/js/2.148b133f.chunk.js.map": "/CS489-GigEcoProject/static/js/2.148b133f.chunk.js.map",
+    "static/js/3.fb4fb437.chunk.js": "/CS489-GigEcoProject/static/js/3.fb4fb437.chunk.js",
+    "static/js/3.fb4fb437.chunk.js.map": "/CS489-GigEcoProject/static/js/3.fb4fb437.chunk.js.map",
+    "index.html": "/CS489-GigEcoProject/index.html",
+    "static/css/main.1441a469.chunk.css.map": "/CS489-GigEcoProject/static/css/main.1441a469.chunk.css.map",
+    "static/js/2.148b133f.chunk.js.LICENSE.txt": "/CS489-GigEcoProject/static/js/2.148b133f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b976028c.js",
-    "static/js/2.b4cce44d.chunk.js",
+    "static/js/runtime-main.3a34710d.js",
+    "static/js/2.148b133f.chunk.js",
     "static/css/main.1441a469.chunk.css",
     "static/js/main.7e872d39.chunk.js"
   ]
