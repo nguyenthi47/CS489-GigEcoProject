@@ -128,7 +128,7 @@ class Study extends React.Component {
           <br/>
           <b>Working hours (length)</b>: the minimum numbers of hours you would have to work (e.g., minimum 8 hours).
           <br/>
-          <b>Salary</b>: how your salary would be calculated (e.g., base salary + hourly salary).
+          <b>Salary</b>: how your salary would be calculated on a weekly basis (e.g., base salary + hourly salary).
           <br/>
           <b>Holiday</b>: the job's holiday policy (e.g., paid, but with restrictions).
           <br/>
