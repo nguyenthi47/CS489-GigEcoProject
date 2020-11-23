@@ -136,7 +136,7 @@ class Study extends React.Component {
           <br/>
           <b>Direct Supervisor</b>: whether you would have a direct supervisor, and if the supervisor would be a human or an algorithm (e.g., yes, no, an algorithm).
           <br/>
-          <b>Allowed to Work for Competitor</b>: whether you would be allowed to work for a competitor (e.g., yes).
+          <b>Allowed to Work for Competitor</b>: whether you would be allowed to work for a competitor at the same time (e.g., work for Uber and Lyft).
         </Typography>
       </Container>
         <div style={{textAlign: "right"}}>
