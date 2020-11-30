@@ -68,13 +68,13 @@ design <- makeDesign(type='constraints', attribute.levels=attribute_list,
 df$choice <- ifelse(df$choice == "True", 1, 0)
 
 results <- amce(choice ~ holiday + supervisor + evaluation +
-                  competitor + length*period*salary, data=df, respondent.id="pid", 
+                  competitor + length + period + salary, data=df, respondent.id="pid", 
                 design=design)
 
 summary(results)
 
 results <- amce(eval ~ holiday + supervisor + evaluation +
-                  competitor + length*period*salary, data=df, respondent.id="pid",
+                  competitor + length + period + salary, data=df, respondent.id="pid",
                 design=design)
 
 summary(results)
