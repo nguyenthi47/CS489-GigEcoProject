@@ -1,0 +1,40 @@
+Data summary
+
+Day off
+Paid, but following company policies    0.503333
+Unpaid, but whenever you want           0.496667
+Name: Day off, dtype: float64
+
+Direct Supervisor
+Yes             0.348333
+An algorithm    0.333333
+No              0.318333
+Name: Direct Supervisor, dtype: float64
+
+Evaluation
+Monthly    0.355000
+Daily      0.323333
+Yearly     0.321667
+Name: Evaluation, dtype: float64
+
+Salary
+Fixed US$500.00                       0.356667
+Fixed US$250.00 + US$6.25 per hour    0.332500
+US$12.50 per hour                     0.310833
+Name: Salary, dtype: float64
+
+Working Options (companies in same sector)
+No     0.519167
+Yes    0.480833
+Name: Working Options (companies in same sector), dtype: float64
+
+Working hours (length)
+Minimum 8h                       0.519167
+Work as much as you want/need    0.249167
+Minimum 4h                       0.231667
+Name: Working hours (length), dtype: float64
+
+Working hours (time period)
+Totally flexible    0.730833
+9am-5pm required    0.269167
+Name: Working hours (time period), dtype: float64
