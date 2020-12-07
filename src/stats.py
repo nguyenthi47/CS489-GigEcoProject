@@ -9,4 +9,7 @@ attrs = ['Day off', 'Direct Supervisor', 'Evaluation', 'Salary', 'Working Option
 print('Data summary')
 for attr in attrs:
     print('\n' + attr)
-    print(df[attr].value_counts(normalize=True))
+    print(df[df.choice == True][attr].value_counts(normalize=True))
+
+print('\nMean evaluation')
+print(df['eval'].mean())
