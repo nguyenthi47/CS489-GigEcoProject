@@ -38,5 +38,6 @@ Working hours (time period)
 Totally flexible    0.786667
 9am-5pm required    0.213333
 Name: Working hours (time period), dtype: float64
+
 Mean evaluation
 3.4766666666666666
