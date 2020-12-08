@@ -1,0 +1,87 @@
+Data summary
+
+
+Day off
+
+Percentage
+Paid, but following company policies    0.535
+Unpaid, but whenever you want           0.465
+Name: Day off, dtype: float64
+
+Mean evaluation
+Paid, but following company policies	3.552980132450331
+Unpaid, but whenever you want	3.3993288590604025
+
+Direct Supervisor
+
+Percentage
+Yes             0.378333
+An algorithm    0.325000
+No              0.296667
+Name: Direct Supervisor, dtype: float64
+
+Mean evaluation
+Yes	3.5645933014354068
+An algorithm	3.4725
+No	3.384816753926702
+
+Evaluation
+
+Percentage
+Monthly    0.361667
+Yearly     0.351667
+Daily      0.286667
+Name: Evaluation, dtype: float64
+
+Mean evaluation
+Monthly	3.5422535211267605
+Daily	3.4072164948453607
+Yearly	3.4740932642487046
+
+Salary
+
+Percentage
+Fixed US$500.00                       0.36
+Fixed US$250.00 + US$6.25 per hour    0.34
+US$12.50 per hour                     0.30
+Name: Salary, dtype: float64
+
+Mean evaluation
+US$12.50 per hour	3.46112600536193
+Fixed US$500.00	3.441588785046729
+Fixed US$250.00 + US$6.25 per hour	3.5288220551378444
+
+Working Options (companies in same sector)
+
+Percentage
+Yes    0.535
+No     0.465
+Name: Working Options (companies in same sector), dtype: float64
+
+Mean evaluation
+Yes	3.5303292894280762
+No	3.4269662921348316
+
+Working hours (length)
+
+Percentage
+Minimum 8h                       0.471667
+Minimum 4h                       0.266667
+Work as much as you want/need    0.261667
+Name: Working hours (length), dtype: float64
+
+Mean evaluation
+Work as much as you want/need	3.612040133779264
+Minimum 8h	3.391653290529695
+Minimum 4h	3.5215827338129495
+
+Working hours (time period)
+
+Percentage
+Totally flexible    0.786667
+9am-5pm required    0.213333
+Name: Working hours (time period), dtype: float64
+
+Mean evaluation
+Totally flexible	3.5267958950969214
+9am-5pm required	3.3405572755417956
