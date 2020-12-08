@@ -65,16 +65,27 @@ constraint_list[[2]]["length"] <- c("Flexible")
 design <- makeDesign(type='constraints', attribute.levels=attribute_list,
                           constraints=constraint_list)
 
+baselines <- list()
+baselines$holiday <- "Paid"
+baselines$supervisor <- "Yes"
+baselines$evaluation <- "Yearly"
+baselines$salary <- "Fixed"
+baselines$competitor <- "No"
+baselines$length <- "Min 8h"
+baselines$period <- "9-5"
+
 df$choice <- ifelse(df$choice == "True", 1, 0)
 
 results <- amce(choice ~ holiday + supervisor + evaluation +
                   competitor + length + period + salary, data=df, respondent.id="pid", 
-                design=design)
+                design=design, baselines=baselines)
 
 summary(results)
+plot(results)
 
 results <- amce(eval ~ holiday + supervisor + evaluation +
                   competitor + length + period + salary, data=df, respondent.id="pid",
-                design=design)
+                design=design, baselines=baselines)
 
 summary(results)
+plot(results)
