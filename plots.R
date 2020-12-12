@@ -52,12 +52,27 @@ CapStr <- function(y) {
         sep="", collapse=" ")
 }
 
+colors <- c(
+  "period" = "dodgerblue2",
+  "length" = "orchid2",
+  "salary" = "darkseagreen4",
+  "holiday" = "goldenrod2",
+  "supervisor" = "lightskyblue3",
+  "competitor" = "royalblue3",
+  "evaluation" = "sienna2"
+)
+
 ggplot(df, aes(x=eval)) +
-  geom_histogram(aes(y=..density..), bins=5, fill="firebrick1", color="firebrick4") +
+  geom_histogram(aes(y=..density..), bins=5, fill="indianred1", color="indianred4") +
   theme_bw() +
   ylab("Density") +
   xlab("") +
-  ggtitle("Rating")
+  ggtitle("Rating Distribution") +
+  theme(
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size=14)
+  )
 
 plot <- function(col) {
   print(col)
@@ -76,7 +91,7 @@ plot <- function(col) {
   }
   
   p <- ggplot(df, aes_string(x=col, y="eval", fill=col)) +
-    geom_bar(mapping=aes_string(x=col, y="mean"), data=tmp, stat="identity") +
+    geom_bar(mapping=aes_string(x=col, y="mean"), data=tmp, stat="identity", fill=colors[col]) +
     geom_errorbar(mapping=aes_string(x=col, y="mean", ymin="mean-se", ymax="mean+se"), data=tmp, width=0.2) +
     # geom_jitter(width=0.1, height=0.4, alpha=0.025) +
     theme_bw() +
@@ -118,13 +133,28 @@ for (col in cols) {
 df <- df %>%
   mutate(choiceV = ifelse(choice == "True", 1, 0))
 
+df <- df %>%
+  mutate(pid.rid = paste(pid, rid, sep="-"))
+
+unique_pid <- unique(df$pid.rid)
 
 plot2 <- function(col) {
   print(col)
   
   pairs <- split(t(combn(levels(df[[col]]), 2)), seq(nrow(t(combn(levels(df[[col]]), 2)))))
   
-  tmp <- df[df$choice == "True", ] %>% group_by(.dots=col) %>%
+  to_drop <- c()
+  for (pid in unique_pid) {
+    tmp <- df[df$pid.rid == pid,]
+    tmp_ <- tmp[[col]]
+    if (tmp_[1] == tmp_[2]) {
+      to_drop <- c(to_drop, pid)
+    }
+  }
+  
+  df.clean <- df[!df$pid.rid %in% to_drop, ]
+  
+  tmp <- df.clean[df.clean$choice == "True", ] %>% group_by(.dots=col) %>%
     summarise(perc=n())
   tmp$perc <- tmp$perc / sum(tmp$perc) * 100
   
@@ -134,7 +164,7 @@ plot2 <- function(col) {
   }
   
   p.values <- rcompanion::pairwiseNominalIndependence(
-    table(df[[col]], df$choice),
+    table(df.clean[[col]], df.clean$choice),
     fisher = FALSE,
     gtest = FALSE,
     chisq = TRUE,
@@ -147,8 +177,8 @@ plot2 <- function(col) {
   p.values[p.values == "."] <- "NS."
   
   
-  p <- ggplot(df, aes_string(x=col, y="choiceV", fill=col)) +
-    geom_bar(mapping=aes_string(x=col, y="perc"), data=tmp, stat="identity") +
+  p <- ggplot(df.clean, aes_string(x=col, y="choiceV", fill=col)) +
+    geom_bar(mapping=aes_string(x=col, y="perc"), data=tmp, stat="identity", fill=colors[col]) +
     theme_bw() +
     scale_y_continuous(limits = c(0, max(tmp$perc) + 15)) +
     theme(
@@ -185,5 +215,6 @@ rcompanion::pairwiseNominalIndependence(
   method = "holm",
   digits = 3
 )
+
 
 

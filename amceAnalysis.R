@@ -76,16 +76,29 @@ baselines$period <- "9-5"
 
 df$choice <- ifelse(df$choice == "True", 1, 0)
 
+order <- c("period", "length", "salary", "holiday", "supervisor", "competitor", "evaluation")
+att.names <- c("Period", "Length", "Salary", "Holiday", "Supervisor", "Competitor", "Evaluation")
+colors <- colors <- c("dodgerblue2", "orchid2", "darkseagreen4",
+                      "goldenrod2", "lightskyblue3", "royalblue3", "sienna2")
+
 results <- amce(choice ~ holiday + supervisor + evaluation +
                   competitor + length + period + salary, data=df, respondent.id="pid", 
                 design=design, baselines=baselines)
 
 summary(results)
-plot(results)
+plot(results,
+     group.order = order,
+     xlab="Change in Pr(Job Chosen)",
+     colors = colors,
+     main="Job Choice AMCE")
 
 results <- amce(eval ~ holiday + supervisor + evaluation +
                   competitor + length + period + salary, data=df, respondent.id="pid",
                 design=design, baselines=baselines)
 
 summary(results)
-plot(results)
+plot(results,
+     group.order = order,
+     xlab="Change in Job Eval",
+     colors = colors,
+     main="Job Evaluation AMCE")
